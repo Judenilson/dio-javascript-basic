@@ -1,5 +1,6 @@
-/*
+const {tabuada, numeroMaiorMenor, numerosPares} = require('./auxiliary');
 
+/*
 1) Faça um programa que receba um número e escreva a sua respectiva tabuada.
     Exemplo:
         Entrada:
@@ -16,7 +17,9 @@
             2x8 = 16
             2x9 = 18
             2x10 = 20
-
+*/
+tabuada(2);
+/*
 2) Faça um programa que receba a quantidade de números e seus respectivos valores. 
 Imprima o maior e o menor número deste conjunto.
 
@@ -31,7 +34,11 @@ Exemplo:
     Saída:
         Maior número: 200
         Menor número: 90
+*/
+let entrada = [4, 100, 150, 90, 200];
+numeroMaiorMenor(entrada);
 
+/*
 3) Faça um programa que receba a quantidade de números e seus respectivos valores.
 Imprima todos os números pares.
 Exemplo:
@@ -47,3 +54,5 @@ Exemplo:
         Números Pares: 10, 12
 
 */
+entrada = [5, 1, 3, 9, 10, 12];
+numerosPares(entrada);

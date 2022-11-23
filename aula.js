@@ -41,3 +41,29 @@ console.log(ehPar(5));
 == tipagem fraca
 === tipagem forte 
 */
+
+/* função auto executada */
+(function (){
+    const a = 5;
+    const b = 6;
+    console.log(a + b);
+})();
+
+/* Objetos */
+
+const pessoa = {
+    nome: 'Judenilson',
+    idade: 40,
+
+    descrever: function(){
+        console.log(`Meu nome é ${this.nome} e minha idade é ${this.idade}`);
+    }
+};
+
+pessoa.descrever();
+
+console.log(pessoa.idade);
+console.log(pessoa['idade']);
+
+// Técnica Destructuryn
+// const {tabuada, numeroMaiorMenor, numerosPares} = require('./auxiliary');
