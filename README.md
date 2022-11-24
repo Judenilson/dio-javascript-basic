@@ -20,7 +20,7 @@ content-type: application/json
 
 **Response Headers:**
 
-**Reesponse Body:**
+**Response Body:**
 
 Fetch tem o processamento assíncrono, uma hora a resposta pode chegar
 `fetch(url)
