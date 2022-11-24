@@ -117,7 +117,7 @@ Soma dos dígitos = 2 + 3 + 4 = 9
 Resultado = 24 - 9 = 15
 */
 
-let lines = gets().split("\n"); 
+let lines = gets(); 
 let soma = 0;
 let produto = 1;
 
