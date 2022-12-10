@@ -1,3 +1,5 @@
+// Desafio: Fatorial Desajeitado
+
 // Desafio
 // O fatorial de um número inteiro positivo N é o produto de todos os inteiros positivos menores ou iguais a n. Fazemos um fatorial desajeitado usando os inteiros em ordem decrescente, trocando as operações de multiplicação por uma rotação fixa de operações cuja ordem é: multiplicar '*', dividir '/', adicionar '+' e subtrair '-'. Por exemplo, desajeitado(10) = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1. Lembre-se que no fatorial desajeitado as operações ainda são aplicadas usando a ordem usual de operações aritméticas. Além disso, a divisão neste caso sempre resulta em um número inteiro, por exemplo, 90 / 8 = 11. Dado um inteiro N, retorne o fatorial desajeitado de n.
 
@@ -10,22 +12,19 @@
 // Exemplo 1:
 // Entrada	Saída
 // 4	    7
-// Explicação: 7 = 4 * 3 / 2 + 1 
+// Explicação: 7 = 4 * 3 / 2 + 1
 
 // Exemplo 2:
 // Entrada	Saída
 // 10	    12
 // Explicação: 12 = 10 * 9 / 8 + 7 - 6 * 5 / 4 + 3 - 2 * 1
 
-let n = 8;
-let numbers = [];
-
-for (let n = 0; n < 13; n++) {
-      
+let n = 4;
 
 if (n <= 2) {
-//   print(n);
+  console.log(n);
 } else {
+  let numbers = [];
   let i = n;
   let j = 0;
   while (i > 0) {
@@ -44,8 +43,8 @@ if (n <= 2) {
   for (let i = 2; i < numbers.length; i += 4) {
     division.push(parseInt(multiplication[j] / numbers[i]));
 
-    if ((j + 2 == multiplication.length) && (i + 4 === numbers.length)){
-      division.push(multiplication[j+1]);
+    if (j + 2 == multiplication.length && i + 4 === numbers.length) {
+      division.push(multiplication[j + 1]);
     }
 
     if (i + 3 === numbers.length) {
@@ -56,20 +55,27 @@ if (n <= 2) {
     j++;
   }
 
-  let result = division[0];
+  let r = division[0];
   for (let i = 1; i < division.length; i++) {
-    result -= division[i];
+    r -= division[i];
   }
   for (let i = 3; i < numbers.length; i += 4) {
-    result += numbers[i];
+    r += numbers[i];
   }
+  console.log(r);
+}
 
-//   console.log(multiplication);
-//   console.log(division);
-  console.log(n + " = " + parseInt(result));
-  // print(result);
-}
-}
+// 3 = 6
+// 4 = 7
+// 5 = 7
+// 6 = 8
+// 7 = 6
+// 8 = 9
+// 9 = 10
+// 10 = 12
+// 11 = 9
+// 12 = 13
+
 //0 1 2
 //3*2/1
 //6/1
@@ -98,15 +104,3 @@ if (n <= 2) {
 //72/7 +6 -20/3 +2 -1
 //10 +6 -6 +2 -1
 //11
-
-
-// 3 = 6
-// 4 = 7
-// 5 = 7
-// 6 = 8
-// 7 = 6
-// 8 = 9
-// 9 = 10
-// 10 = 12
-// 11 = 9
-// 12 = 13
